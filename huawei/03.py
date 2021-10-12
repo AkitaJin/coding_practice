@@ -2,7 +2,7 @@
 Author: Jin
 Date: 2021-10-12 08:50:32
 LastEditors: Jin
-LastEditTime: 2021-10-12 13:30:49
+LastEditTime: 2021-10-12 13:35:08
 Description: 
 '''
 # 题目描述
@@ -25,7 +25,6 @@ mat=[[3,2,2],[0,1,0],[1,1,1]]
 dirs=[[1,0],[0,1]]
 dp=[[9999]*n for _ in range(m)]
 dp[0][0]=0
-print(dp)   
 
 # 给定坐标点和步数，更新可移动范围内的矩阵数值
 '''
@@ -43,10 +42,11 @@ def jump(x,y,s,p):
             if nx<=m-1 and ny<=n-1 and mat[nx][ny]!=0:
                 dp[nx][ny]=min(dp[nx][ny], p)
                 jump(nx,ny,s-1,p)
-    # else:
 
 for i in range(m):
     for j in range(n):
         if mat[i][j]!=0 or ~(i==m-1 and j==n-1):
             jump(i,j,mat[i][j],dp[i][j]+1)
-            print(dp)
+
+print(dp)
+print(dp[m-1][n-1])
