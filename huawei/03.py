@@ -2,7 +2,7 @@
 Author: Jin
 Date: 2021-10-12 08:50:32
 LastEditors: Jin
-LastEditTime: 2021-10-12 13:35:08
+LastEditTime: 2021-10-12 15:03:53
 Description: 
 '''
 # 题目描述
@@ -35,6 +35,7 @@ param {*} s 可移动步数
 param {*} p 当前已跳次数
 return {*}
 '''
+
 def jump(x,y,s,p):
     if s>0:
         for d in dirs:
