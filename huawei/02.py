@@ -44,13 +44,13 @@ for i in b.keys():
     for j in b[i]:
         t1sum=dfsum(j)
         curd=abs(psum-2*t1sum+et)
-        print("i:%s,j:%s,p:%s,psum:%s,t1sum=%s,curd=%s,maxd=%s,node=%s" % (i,j,p,psum,t1sum,curd,maxd,node))
+        # print("i:%s,j:%s,p:%s,psum:%s,t1sum=%s,curd=%s,maxd=%s,node=%s" % (i,j,p,psum,t1sum,curd,maxd,node))
         if curd>maxd:
             maxd=curd
             node=j
-            print("i:%s,j:%s,p:%s,psum:%s,t1sum=%s,curd=%s,maxd=%s,node=%s*&***" % (i,j,p,psum,t1sum,curd,maxd,node))
+            # print("i:%s,j:%s,p:%s,psum:%s,t1sum=%s,curd=%s,maxd=%s,node=%s*&***" % (i,j,p,psum,t1sum,curd,maxd,node))
         if curd==maxd and j<node:
             node=j
-            print("i:%s,j:%s,p:%s,psum:%s,t1sum=%s,curd=%s,maxd=%s,node=%s*&***" % (i,j,p,psum,t1sum,curd,maxd,node))
+            # print("i:%s,j:%s,p:%s,psum:%s,t1sum=%s,curd=%s,maxd=%s,node=%s*&***" % (i,j,p,psum,t1sum,curd,maxd,node))
 
 print(node,maxd)
