@@ -2,7 +2,7 @@
 Author: Jin
 Date: 2021-10-12 13:33:55
 LastEditors: Jin
-LastEditTime: 2021-10-14 09:36:24
+LastEditTime: 2021-10-14 09:48:15
 Description: 
 '''
 
@@ -31,13 +31,20 @@ Description:
 # 说明:module1没有定义，无法完成编译，所以输出-1
 
 # ———————————case1——————————
-tm='m3'
-tt={'m1':[10],
-    'm2':[5],
-    'm3':[10,'m1','m2']}
+# tm='m3'
+# tt={'m1':[10],
+#     'm2':[5],
+#     'm3':[10,'m1','m2']}
 # ———————————case2——————————
 # tm='m2'
 # tt={'m2':[10,'m1']}
+# ———————————case3——————————
+tm='m3'
+tt={'m1':[10],
+    'm2':[5,'m1'],
+    'm3':[10,'m1','m2']}
+
+
 
 def dfs(m):
     if m not in tt.keys(): return -1
