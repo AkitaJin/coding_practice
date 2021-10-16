@@ -2,7 +2,7 @@
 Author: Jin
 Date: 2021-10-12 13:33:55
 LastEditors: Jin
-LastEditTime: 2021-10-12 14:05:21
+LastEditTime: 2021-10-14 09:48:15
 Description: 
 '''
 
@@ -36,15 +36,27 @@ Description:
 #     'm2':[5],
 #     'm3':[10,'m1','m2']}
 # ———————————case2——————————
-tm='m2'
-tt={'m2':[10,'m1']}
+# tm='m2'
+# tt={'m2':[10,'m1']}
+# ———————————case3——————————
+tm='m3'
+tt={'m1':[10],
+    'm2':[5,'m1'],
+    'm3':[10,'m1','m2']}
+
+
 
 def dfs(m):
     if m not in tt.keys(): return -1
     if len(tt[m])==1: return tt[m][0]
-    res=0
+    res=tt[m][0]
+    l=[]
     for mm in tt[m][1:]:
-        res+=dfs(mm)
+        l.append(dfs(mm))
+    if -1 in l:
+        return -1
+    res+=max(l)
     return res
         
-print(dfs(tm))
+print(tm,tt,dfs(tm))
+
